@@ -5,66 +5,76 @@ import "swiper/css/free-mode";
 import { FreeMode, Autoplay } from "swiper/modules";
 
 
-// Dummy Testimonials Data
 const testimonials = [
     {
         name: "John M.",
         role: "Operations Lead",
-        feedback: "This tool has completely transformed the way we work! It's intuitive, fast, and so easy to integrate with our current processes. Highly recommended!",
+        feedback: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio id commodi accusamus saepe iste delectus molestias eum accusantium reiciendis quam totam sint pariatur, doloremque expedita, quod unde, quisquam sit voluptatem.",
         image: "https://randomuser.me/api/portraits/men/1.jpg"
     },
     {
         name: "Mike T.",
         role: "Product Designer",
-        feedback: "I've tried a lot of similar tools, but this one stands out. The features are top-notch, and the customer support is fantastic.",
+        feedback: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio id commodi accusamus saepe iste delectus molestias eum accusantium reiciendis quam totam sint pariatur, doloremque expedita, quod unde, quisquam sit voluptatem.",
         image: "https://randomuser.me/api/portraits/men/2.jpg"
     },
     {
         name: "David R.",
         role: "Product Manager",
-        feedback: "I've tried a lot of similar tools, and this one is the best! The features are fantastic, and it's so easy to use.",
+        feedback: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio id commodi accusamus saepe iste delectus molestias eum accusantium reiciendis quam totam sint pariatur, doloremque expedita, quod unde, quisquam sit voluptatem.",
         image: "https://randomuser.me/api/portraits/men/3.jpg"
     },
     {
         name: "Kevin B.",
         role: "Freelancer",
-        feedback: "I can't imagine going back to the old way of doing things. This product has made everything smoother and more efficient. It's a game changer!",
+        feedback: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio id commodi accusamus saepe iste delectus molestias eum accusantium reiciendis quam totam sint pariatur, doloremque expedita, quod unde, quisquam sit voluptatem.",
         image: "https://randomuser.me/api/portraits/men/4.jpg"
     },
     {
         name: "Robert S.",
         role: "Project Manager",
-        feedback: "Incredible tool! I was able to automate so many tasks that used to take hours. It's a real time-saver!",
+        feedback: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio id commodi accusamus saepe iste delectus molestias eum accusantium reiciendis quam totam sint pariatur, doloremque expedita, quod unde, quisquam sit voluptatem.",
         image: "https://randomuser.me/api/portraits/men/5.jpg"
     }
 ];
 
 const Testimonials = () => {
     return (
-        <section className="testimonials-section">
-            <div className="testimonials-header">
-                <h2>Our <span>Customers</span></h2>
-                <p>What people say about us</p>
+        <section className="testimonials-section pad-y">
+            <div className="testimonials-header mb-5">
+                <div className="why-choose-header text-center">
+                    <h2>Our Customers</h2>
+                    <p className="para"> What people say about us</p>
+                </div>
             </div>
-
+            <div className="logo-shadow left-shadow"></div>
             <Swiper
                 slidesPerView={2.5}
-                spaceBetween={20}
+                spaceBetween={40}
                 freeMode={true}
-                autoplay={{ delay: 2500, disableOnInteraction: false }}
-                modules={[FreeMode, Autoplay]}
-                speed={5000}
                 loop={true}
+                autoplay={{
+                    delay: 0,
+                    disableOnInteraction: false,
+                }}
+                speed={8000}
+                modules={[Autoplay, FreeMode]}
                 className="testimonial-slider"
             >
                 {testimonials.map((testimonial, index) => (
                     <SwiperSlide key={index} className="testimonial-card">
                         <div className="testimonial-content">
-                            <img src={testimonial.image} alt={testimonial.name} className="testimonial-image" />
+                            <div className="user-name-area">
+                                <div>
+                                    <img src={testimonial.image} alt={testimonial.name} className="testimonial-image" />
+                                </div>
+                                <div>
+                                    <h4>{testimonial.name}</h4>
+                                    <p className="role">{testimonial.role}</p>
+                                </div>
+                            </div>
                             <div>
-                                <h4>{testimonial.name}</h4>
-                                <p className="role">{testimonial.role}</p>
-                                <p>{testimonial.feedback}</p>
+                                <p className="para">{testimonial.feedback}</p>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -73,27 +83,38 @@ const Testimonials = () => {
 
             <Swiper
                 slidesPerView={2.5}
-                spaceBetween={20}
+                spaceBetween={40}
                 freeMode={true}
-                autoplay={{ delay: 2500, disableOnInteraction: false, reverseDirection: true }}
-                modules={[FreeMode, Autoplay]}
-                speed={5000}
                 loop={true}
+                autoplay={{
+                    delay: 0,
+                    disableOnInteraction: false,
+                    reverseDirection: true
+                }}
+                speed={8000}
+                modules={[Autoplay, FreeMode]}
                 className="testimonial-slider"
             >
                 {testimonials.map((testimonial, index) => (
                     <SwiperSlide key={index} className="testimonial-card">
                         <div className="testimonial-content">
-                            <img src={testimonial.image} alt={testimonial.name} className="testimonial-image" />
+                            <div className="user-name-area">
+                                <div>
+                                    <img src={testimonial.image} alt={testimonial.name} className="testimonial-image" />
+                                </div>
+                                <div>
+                                    <h4>{testimonial.name}</h4>
+                                    <p className="role">{testimonial.role}</p>
+                                </div>
+                            </div>
                             <div>
-                                <h4>{testimonial.name}</h4>
-                                <p className="role">{testimonial.role}</p>
-                                <p>{testimonial.feedback}</p>
+                                <p className="para">{testimonial.feedback}</p>
                             </div>
                         </div>
                     </SwiperSlide>
                 ))}
             </Swiper>
+            <div className="logo-shadow right-shadow"></div>
         </section>
     );
 };

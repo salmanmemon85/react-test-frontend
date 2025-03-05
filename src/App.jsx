@@ -4,6 +4,8 @@ import WhyChooseUs from './components/WhyChooseUs';
 import Plans from './components/Plans';
 import FAQs from './components/Faqs';
 import Testimonials from './components/Testimonials';
+import blur2 from './assets/images/blur2.png';
+import Editor from './components/Editor';
 function App() {
   return (
     <>
@@ -23,6 +25,7 @@ function App() {
           </div>
         </div>
       </section>
+      <Editor/>
       <section className='client-section pad-y'>
         <div className="container">
           <div className='row justify-content-center'>
@@ -40,7 +43,23 @@ function App() {
       <Plans/>
       <FAQs/>
       <Testimonials/>
-
+      <section className='hero-banner position-relative'>
+      <img src={blur2} className='img-fluid footer-img' alt="" />
+        <div className="container">
+          <div className='row justify-content-center'>
+            <div className='col-lg-8 col-md-12'>
+              <div className='text-center'>
+                <h1 className='primary-hd'>Get Started</h1>
+                <p className='para'>Holds no opinions on what’s and how’s. Build whatever <br/> makes sense to you.</p>
+                <div className='d-flex gap-3 mt-4 justify-content-center'>
+                  <a href="#" className="primary-btn pad">Try It now</a>
+                  <a href="#" className="secondary-btn pad">Book Your Demo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
